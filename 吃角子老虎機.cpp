@@ -4,51 +4,51 @@
 #include <windows.h>
 using namespace std;
 
-// ©w¸q©ÔÅQ¾÷¤Wªº¤T­Ó¹Ï®×
+// å®šç¾©æ‹‰éœ¸æ©Ÿä¸Šçš„ä¸‰å€‹åœ–æ¡ˆ
 const char SYMBOLS[] = {'A', 'B', 'C'};
 
-// ²£¥Í¶Ã¼Æ¡A¥Î©ó¥Í¦¨ÀH¾÷¹Ï®×
+// ç”¢ç”Ÿäº‚æ•¸ï¼Œç”¨æ–¼ç”Ÿæˆéš¨æ©Ÿåœ–æ¡ˆ
 int random(int min, int max) {
     return rand() % (max - min + 1) + min;
 }
 
-// ²£¥ÍÀH¾÷¹Ï®×
+// ç”¢ç”Ÿéš¨æ©Ÿåœ–æ¡ˆ
 char spin() {
     int index = random(0, 2);
     return SYMBOLS[index];
 }
 
 int main() {
-    // ªì©l¤Æ¶Ã¼ÆºØ¤l
+    // åˆå§‹åŒ–äº‚æ•¸ç¨®å­
     srand(time(NULL));
 
-    // Åã¥Ü¹CÀ¸¤¶­±
+    // é¡¯ç¤ºéŠæˆ²ä»‹é¢
     cout << "**********" << endl;
     cout << "* SLOT *   * MACHINE *" << endl;
     cout << "**********" << endl;
 
-    // ¶}©l¹CÀ¸
+    // é–‹å§‹éŠæˆ²
     char a, b, c;
     char input;
 
     do {
         cout << "Press Enter to spin the slot machine!" << endl;
-        cin.ignore(); // ©¿²¤¤§«e¿é¤Jªº Enter
+        cin.ignore(); // å¿½ç•¥ä¹‹å‰è¼¸å…¥çš„ Enter
 
-        // ²£¥ÍÀH¾÷¹Ï®×
+        // ç”¢ç”Ÿéš¨æ©Ÿåœ–æ¡ˆ
         a = spin();
         b = spin();
         c = spin();
 
-        // Åã¥Ü©ÔÅQ¾÷¹Ï®×
+        // é¡¯ç¤ºæ‹‰éœ¸æ©Ÿåœ–æ¡ˆ
         cout << a << " | " << b << " | " << c << endl;
 
-        // °±¹y 1 ¬í
+        // åœé “ 1 ç§’
 		Sleep(1000);
 
     } while (a != b || b != c);
 
-    // Åã¥Ü¤¤¼ú«H®§
+    // é¡¯ç¤ºä¸­çä¿¡æ¯
     cout << "Congratulations! You win!" << endl;
 
     return 0;
